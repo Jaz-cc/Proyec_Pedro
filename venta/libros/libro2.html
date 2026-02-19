@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1984</title>
+  
+  <link rel="stylesheet" href="../css/estilo.css">
+  <script src="../js/carrito.js"></script>
+</head>
+
+<body>
+
+<script>
+  localStorage.setItem("ultimoLibro", "1984");
+  localStorage.setItem("urlLibro", "libros/libro2.html");
+</script>
+
+<nav class="menu">
+  <a href="../index.html">Inicio</a>
+  <a href="../catalogo.html">Libros</a>
+  <a href="../buscar.html">Buscar</a>
+  <a href="../carrito.html">Carrito</a>
+  <a href="../sitiomapa.html">Mapa del sitio</a>
+</nav>
+
+<div class="detalle-container">
+
+  <div class="detalle-card">
+
+    <div class="detalle-imagen">
+      <img src="../imagenes/1984.jfif" alt="1984">
+    </div>
+
+    <div class="detalle-info">
+
+      <h1>1984</h1>
+      <br>
+      <hr>
+
+      <div class="etiquetas">
+        <span class="tag venta">MÀS VENDIDO</span>
+        <span class="tag envio">Envío Gratis</span>
+      </div>
+
+      <p class="descripcion">
+        Novela distópica que retrata una sociedad controlada por un
+        régimen totalitario y la manipulación de la verdad.
+      </p>
+      <br>
+      <p><strong>Autor:</strong> George Orwell</p>
+
+      <div class="precio-box">
+        <div class="precio">$180</div>
+        <div class="cuotas">en 3 cuotas de $60 sin interés</div>
+      </div>
+
+      <div class="rating">
+        ⭐⭐⭐⭐☆ <span>(15 reseñas)</span>
+      </div>
+
+
+      <form id="formCompra" data-titulo="1984" data-precio="180">
+
+        <label>Cantidad</label>
+        <input type="number" id="cantidad" min="1" max="5" required>
+
+        <label>Confirmar compra (SI / NO)</label>
+        <input type="text" pattern="SI|NO" required>
+
+        <button type="submit" class="btn-comprar">
+          Agregar al carrito
+        </button>
+
+        <a href="../carrito.html" class="btn-secundario">
+          Ir al Carrito
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

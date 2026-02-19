@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orgullo y Prejuicio</title>
+
+  <link rel="stylesheet" href="../css/estilo.css">
+  <script src="../js/carrito.js"></script>
+</head>
+
+<body>
+
+<script>
+  localStorage.setItem("ultimoLibro", "Orgullo y Prejuicio");
+  localStorage.setItem("urlLibro", "libros/libro7.html");
+</script>
+
+<nav class="menu">
+  <a href="../index.html">Inicio</a>
+  <a href="../catalogo.html">Libros</a>
+  <a href="../buscar.html">Buscar</a>
+  <a href="../carrito.html">Carrito</a>
+  <a href="../sitiomapa.html">Mapa del sitio</a>
+</nav>
+
+<nav class="breadcrumbs">
+  <a href="../index.html">Inicio</a>
+  <span>›</span>
+  <a href="../catalogo.html">Libros</a>
+  <span>›</span>
+  <span>Orgullo</span>
+</nav>
+
+<div class="detalle-container">
+
+  <div class="detalle-card">
+
+    <div class="detalle-imagen">
+      <img src="../imagenes/orgullo.jfif" alt="Orgullo y Prejuicio">
+    </div>
+
+    <div class="detalle-info">
+
+      <h1>Orgullo y Prejuicio</h1>
+
+      <div class="rating">
+        ⭐⭐⭐⭐⭐ <span>(512 reseñas)</span>
+      </div>
+
+      <div class="etiquetas">
+        <span class="tag oferta">OFERTA</span>
+        <span class="tag envio">Envío Gratis</span>
+      </div>
+
+      <p class="descripcion">
+        Clásica novela romántica de Jane Austen que explora el amor,
+        las diferencias sociales y los prejuicios en la Inglaterra del siglo XIX,
+        a través de la inolvidable historia de Elizabeth Bennet.
+      </p>
+
+      <p><strong>Autor:</strong> Jane Austen</p>
+
+      <div class="precio-box">
+        <div class="precio">$200</div>
+        <div class="cuotas">en 5 cuotas de $40 sin interés</div>
+      </div>
+
+      <form id="formCompra" data-titulo="Orgullo y Prejuicio" data-precio="200">
+
+        <label>Cantidad</label>
+        <input type="number" id="cantidad" min="1" max="5" required>
+
+        <label>Confirmar compra (SI o NO)</label>
+        <input type="text" pattern="SI|NO" required>
+
+        <button type="submit" class="btn-comprar">
+          Agregar al carrito
+        </button>
+
+        <a href="../carrito.html" class="btn-secundario">
+          Ir al Carrito
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

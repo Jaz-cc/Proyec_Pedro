@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>El Principito</title>
+
+  <script src="../js/carrito.js"></script>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+<script>
+  localStorage.setItem("ultimoLibro", "El Principito");
+  localStorage.setItem("urlLibro", "libros/libro1.html");
+</script>
+
+<!-- MENÚ -->
+<nav class="menu">
+  <a href="../index.html">Inicio</a>
+  <a href="../catalogo.html">Libros</a>
+  <a href="../buscar.html">Buscar</a>
+  <a href="../carrito.html">Carrito</a>
+  <a href="../sitiomapa.html">Mapa del sitio</a>
+</nav>
+
+<div class="detalle-container">
+
+  <div class="detalle-card">
+    <div class="detalle-imagen">
+      <img src="../imagenes/principito.jfif" alt="El Principito">
+    </div>
+
+    <!-- INFO -->
+    <div class="detalle-info">
+
+      <h1>El Principito</h1>
+      <br>
+<hr>
+      <div class="etiquetas">
+        <span class="tag oferta">OFERTA</span>
+        <span class="tag envio">Envío Gratis</span>
+        <span class="tag stock">Últimas unidades</span>
+      </div>
+
+      <p class="descripcion">
+        Obra de Antoine de Saint-Exupéry que reflexiona sobre la vida,
+        la amistad y el amor desde una mirada infantil.
+      </p>
+      <br>
+      <p><strong>Autor:</strong> Antoine de Saint-Exupéry</p>
+      
+      <div class="precio-box">
+        <div class="precio">$150</div>
+        <div class="cuotas">en 3 cuotas de $50 sin interés</div>
+      </div>
+
+      <div class="rating">
+        ⭐⭐⭐⭐⭐ <span>(69 reseñas)</span>
+      </div>
+
+      <form id="formCompra" data-titulo="El Principito" data-precio="150" data-img="/imagenes/principito.jfif">
+
+        <label>Cantidad</label>
+        <input type="number" id="cantidad" min="1" max="5" required>
+
+        <label>Confirmar compra (SI / NO)</label>
+        <input type="text" pattern="SI|NO" required>
+
+        <button type="submit" class="btn-comprar">
+          Agregar al carrito
+        </button>
+
+        <a href="../carrito.html" class="btn-secundario">
+          Ir al Carrito
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
