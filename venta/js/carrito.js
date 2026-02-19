@@ -19,8 +19,7 @@ function vaciarCarrito() {
 
 
 function renderCarrito() {
-  console.log(item.img);
-
+  
   const contenedor = document.getElementById("listaCarrito");
   const totalHTML = document.getElementById("totalCarrito");
 
@@ -74,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const titulo = form.dataset.titulo;
       const precio = parseFloat(form.dataset.precio);
       const cantidad = parseInt(document.getElementById("cantidad").value);
-      const img = form.dataset.img;
       const confirmacion = form.querySelector('input[type="text"]').value.toUpperCase();
 
       if (confirmacion !== "SI") {
@@ -87,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (existente) {
         existente.cantidad += cantidad;
       } else {
-        carrito.push({ titulo, precio, cantidad, img });
+        carrito.push({ titulo, precio, cantidad });
       }
 
       guardarCarrito();
