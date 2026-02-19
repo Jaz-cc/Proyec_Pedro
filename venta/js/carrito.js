@@ -41,7 +41,7 @@ function renderCarrito() {
 
     contenedor.innerHTML += `
       <div class="item-carrito">
-        <img src="${item.img}" alt="Libro">
+        <img src="${item.imagen}" alt="Libro">
 
         <div class="item-info">
           <h4>${item.titulo}</h4>
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const titulo = form.dataset.titulo;
       const precio = parseFloat(form.dataset.precio);
       const cantidad = parseInt(document.getElementById("cantidad").value);
+      const imagen = form.dataset.imagen;
       const confirmacion = form.querySelector('input[type="text"]').value.toUpperCase();
 
       if (confirmacion !== "SI") {
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (existente) {
         existente.cantidad += cantidad;
       } else {
-        carrito.push({ titulo, precio, cantidad });
+        carrito.push({ titulo, precio, cantidad, imagen });
       }
 
       guardarCarrito();
