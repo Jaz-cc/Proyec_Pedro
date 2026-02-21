@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>El Principito</title>
-
-  <script src="../js/carrito.js"></script>
   <link rel="stylesheet" href="../css/estilo.css">
 </head>
 
 <body>
-
+<p id="stock"></p>
+<script>
+  const libro = libros.find(l => l.titulo === "El principito");
+  document.getElementById("stock").innerText =
+    "Stock disponible: " + libro.stock;
+</script>
 <script>
   localStorage.setItem("ultimoLibro", "El Principito");
   localStorage.setItem("urlLibro", "libros/libro1.html");
@@ -80,6 +83,7 @@
     </div>
   </div>
 </div>
-
+<script src="../js/libros.js"></script>
+<script src="../js/carrito.js"></script>
 </body>
 </html>

@@ -1,11 +1,12 @@
-const libros = [
+const librosOriginal = [
   {
     id: 1,
     titulo: "El Principito",
     autor: "Antoine de Saint-Exupéry",
     precio: 150,
     imagen: "./imagenes/principito.jfif",
-    pagina: "libros/libro1.html"
+    pagina: "libros/libro1.html",
+    stock: 3
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ const libros = [
     autor: "George Orwell",
     precio: 180,
     imagen: "./imagenes/1984.jfif",
-    pagina: "libros/libro2.html"
+    pagina: "libros/libro2.html",
+    stock: 19
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ const libros = [
     autor: "Miguel de Cervantes",
     precio: 250,
     imagen: "./imagenes/quijote.jfif",
-    pagina: "libros/libro3.html"
+    pagina: "libros/libro3.html",
+    stock: 18
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ const libros = [
     autor: "Gabriel García Márquez",
     precio: 220,
     imagen: "./imagenes/cien.jfif",
-    pagina: "libros/libro4.html"
+    pagina: "libros/libro4.html",
+    stock: 22
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ const libros = [
     autor: "J. K. Rowling",
     precio: 300,
     imagen: "./imagenes/harry.jfif",
-    pagina: "libros/libro5.html"
+    pagina: "libros/libro5.html",
+    stock: 3
   },
   {
     id: 6,
@@ -45,7 +50,8 @@ const libros = [
     autor: "J. R. R. Tolkien",
     precio: 280,
     imagen: "./imagenes/hobbit.jfif",
-    pagina: "libros/libro6.html"
+    pagina: "libros/libro6.html",
+    stock: 26
   },
   {
     id: 7,
@@ -53,7 +59,8 @@ const libros = [
     autor: "Jane Austen",
     precio: 200,
     imagen: "./imagenes/orgullo.jfif",
-    pagina: "libros/libro7.html"
+    pagina: "libros/libro7.html",
+    stock: 23
   },
   {
     id: 8,
@@ -61,7 +68,8 @@ const libros = [
     autor: "Bram Stoker",
     precio: 210,
     imagen: "./imagenes/dracua.jfif",
-    pagina: "libros/libro8.html"
+    pagina: "libros/libro8.html",
+    stock: 16
   },
   {
     id: 9,
@@ -69,7 +77,8 @@ const libros = [
     autor: "Lewis Carroll",
     precio: 190,
     imagen: "./imagenes/alicia.jfif",
-    pagina: "libros/libro9.html"
+    pagina: "libros/libro9.html",
+    stock: 9
   },
   {
     id: 10,
@@ -77,6 +86,13 @@ const libros = [
     autor: "Mary Shelley",
     precio: 230,
     imagen: "./imagenes/franke.jfif",
-    pagina: "libros/libro10.html"
+    pagina: "libros/libro10.html",
+    stock: 23
   }
 ];
+
+let libros = JSON.parse(localStorage.getItem("libros")) || librosOriginal;
+
+function guardarLibros() {
+  localStorage.setItem("libros", JSON.stringify(libros));
+}

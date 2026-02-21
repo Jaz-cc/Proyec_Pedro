@@ -80,6 +80,19 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("❌ Compra cancelada. Escriba SI para confirmar.");
         return;
       }
+      const libro = libros.find(l => l.titulo === titulo);
+      if (!libro) {
+        window.location.href = "../error404.html";
+        return;
+      }
+
+      if (cantidad > libro.stock) {
+        window.location.href = "../error404.html";
+        return;
+      }
+
+      libro.stock -= cantidad;
+      guardarLibros();
 
       const existente = carrito.find(item => item.titulo === titulo);
 

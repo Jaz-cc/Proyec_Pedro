@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cien Años de Soledad</title>
-
   <link rel="stylesheet" href="../css/estilo.css">
-  <script src="../js/carrito.js"></script>
 </head>
 <body>
-
+<p id="stock"></p>
+<script>
+  const libro = libros.find(l => l.titulo === "Cien Años de Soledad");
+  document.getElementById("stock").innerText =
+    "Stock disponible: " + libro.stock;
+</script>
 <script>
   localStorage.setItem("ultimoLibro", "Cien Años de Soledad");
   localStorage.setItem("urlLibro", "libros/libro4.html");
@@ -77,6 +80,8 @@
     </div>
   </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/libros.js"></script>
+<script src="../js/carrito.js"></script>
 </body>
 </html>
