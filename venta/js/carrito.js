@@ -6,6 +6,14 @@ function guardarCarrito() {
 }
 
 function eliminarDelCarrito(titulo) {
+  const item = carrito.find(i => i.titulo === titulo);
+  if (item) {
+    const libro = libros.find(l => l.titulo === titulo);
+    if (libro) {
+      libro.stock += item.cantidad;
+      guardarLibros();
+    }
+  }
   carrito = carrito.filter(item => item.titulo !== titulo);
   guardarCarrito();
   renderCarrito();
