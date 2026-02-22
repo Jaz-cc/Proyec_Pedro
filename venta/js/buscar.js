@@ -2,7 +2,7 @@ function buscarLibro() {
   const texto = document.getElementById("busqueda").value.toLowerCase().trim();
   const resultado = document.getElementById("resultado");
 
-  resultado.innerHTML = "";
+    resultado.innerHTML = "";
 
   if (texto === "") {
     resultado.innerHTML = `
@@ -28,6 +28,11 @@ function buscarLibro() {
   }
 
   encontrados.forEach(libro => {
+
+    const urlDestino = libro.stock > 0 
+      ? libro.pagina 
+      : "error404.html";
+
     resultado.innerHTML += `
       <div class="resultado-libro">
         <img src="${libro.imagen}">
@@ -46,12 +51,8 @@ function buscarLibro() {
 
           <br>
 
-          <a href="${libro.pagina}">Ver más</a>
+          <a href="${urlDestino}">Ver más</a>
           <br><br>
-
-          <button onclick="agregarAlCarrito('${libro.titulo}', ${libro.precio})">
-            Agregar al carrito
-          </button>
         </div>
       </div>
     `;
