@@ -724,3 +724,39 @@ input {
   font-size: 13px;
   color: #888;
 }
+/*---------------------- PAGO -------------------------*/
+
+.card {
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.card h2 {
+  font-size: 26px;
+  color: #111;
+}
+
+#resumenPedido p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+#totalPedido {
+  font-size: 24px;
+  font-weight: bold;
+  color: #B12704;
+}
+
+.btn-warning {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+}
+
+.btn-warning:hover {
+  background: #f7ca00;
+}
+
+.form-control:focus {
+  border-color: #f0c14b;
+  box-shadow: 0 0 0 3px rgba(240,193,75,0.3);
+}

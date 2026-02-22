@@ -4,13 +4,6 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-const boton = document.getElementById("btnAgregar");
-if (boton) {
-  boton.classList.add("animar");
-  setTimeout(() => {
-    boton.classList.remove("animar");
-  }, 400);
-}
 
 function eliminarDelCarrito(titulo) {
   const item = carrito.find(i => i.titulo === titulo);
@@ -99,6 +92,37 @@ function cambiarCantidad(titulo, cambio) {
   guardarCarrito();
   guardarLibros();
   renderCarrito();
+}
+
+function realizarPago() {
+
+  if (carrito.length === 0) {
+    return; // no hace nada si está vacío
+  }
+
+  window.location.href = "pago.html";
+}
+
+function renderResumenPago() {
+
+  const resumen = document.getElementById("resumenPedido");
+  const totalHTML = document.getElementById("totalPedido");
+
+  if (!resumen || !totalHTML) return;
+
+  let total = 0;
+  resumen.innerHTML = "";
+
+  carrito.forEach(item => {
+    const subtotal = item.precio * item.cantidad;
+    total += subtotal;
+
+    resumen.innerHTML += `
+      <p>${item.titulo} x${item.cantidad} - $${subtotal}</p>
+    `;
+  });
+
+  totalHTML.innerHTML = "<strong>Total: $" + total + "</strong>";
 }
 
 function realizarCompra() {
@@ -246,7 +270,7 @@ function cerrarExito() {
 document.addEventListener("DOMContentLoaded", () => {
 
   renderCarrito();
-  renderHistorial();
+  renderResumenPago();
 
   const form = document.getElementById("formCompra");
 

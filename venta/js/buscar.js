@@ -49,9 +49,6 @@ function buscarLibro() {
           <a href="${libro.pagina}">Ver más</a>
           <br><br>
 
-          <button onclick="agregarAlCarrito('${libro.titulo}', ${libro.precio})">
-            Agregar al carrito
-          </button>
         </div>
       </div>
     `;
