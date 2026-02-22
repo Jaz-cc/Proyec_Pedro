@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alicia en el País de las Maravillas</title>
-
   <link rel="stylesheet" href="../css/estilo.css">
-  <script src="../js/carrito.js"></script>
 </head>
 
 <body>
-
+<p id="stock"></p>
+<script>
+  const libro = libros.find(l => l.titulo === "Alicia en el País de las Maravillas");
+  document.getElementById("stock").innerText =
+    "Stock disponible: " + libro.stock;
+</script>
 <script>
   localStorage.setItem("ultimoLibro", "Alicia en el País de las Maravillas");
   localStorage.setItem("urlLibro", "libros/libro9.html");
@@ -88,6 +91,7 @@
     </div>
   </div>
 </div>
-
+<script src="../js/libros.js"></script>
+<script src="../js/carrito.js"></script>
 </body>
 </html>

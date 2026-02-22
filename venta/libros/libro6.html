@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Hobbit</title>
-
   <link rel="stylesheet" href="../css/estilo.css">
-  <script src="../js/carrito.js"></script>
 </head>
 
 <body>
-
+<p id="stock"></p>
+<script>
+  const libro = libros.find(l => l.titulo === "El Hobbit");
+  document.getElementById("stock").innerText =
+    "Stock disponible: " + libro.stock;
+</script>
 <script>
   localStorage.setItem("ultimoLibro", "El Hobbit");
   localStorage.setItem("urlLibro", "libros/libro6.html");
@@ -89,6 +92,7 @@
     </div>
   </div>
 </div>
-
+<script src="../js/libros.js"></script>
+<script src="../js/carrito.js"></script>
 </body>
 </html>

@@ -367,6 +367,36 @@ button:hover {
 /*-----------------------CARRITO-------------------------*/
 
 
+.pantalla-exito {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.exito-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
 
 .carrito-contenedor {
   display: flex;
@@ -391,20 +421,29 @@ button:hover {
   margin: 0 6px;
   color: #555;
 }
-
 .item-carrito {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: white;
-  border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  margin-bottom: 10px;
+  border-radius: 10px;
   gap: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .item-carrito img {
   width: 70px;
-  border-radius: 6px;
+  border-radius: 8px;
+}
+
+.item-cantidad button {
+  border: none;
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .item-info {
@@ -422,11 +461,6 @@ button:hover {
   font-size: 18px;
 }
 
-.item-cantidad {
-  font-size: 14px;
-  color: #666;
-}
-
 .resumen-carrito {
   background: white;
   border-radius: 15px;
@@ -440,6 +474,10 @@ button:hover {
   font-weight: bold;
   color: #e53935;
   margin-bottom: 15px;
+}
+.btn-link:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
 }
 
 .btn-comprar {
@@ -455,7 +493,15 @@ button:hover {
 .btn-comprar:hover {
   background: #e68a00;
 }
+@keyframes pulseAgregar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
 
+.animar {
+  animation: pulseAgregar 0.4s ease;
+}
 /*-----------------------------LOGIN---------------------------*/
 .login-box {
     display: none;
