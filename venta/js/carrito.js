@@ -20,6 +20,14 @@ function eliminarDelCarrito(titulo) {
 }
 
 function vaciarCarrito() {
+  carrito.forEach(item => {
+    const libro = libros.find(l => l.titulo === item.titulo);
+    if (libro) {
+      libro.stock += item.cantidad;
+    }
+  });
+
+  guardarLibros();
   carrito = [];
   guardarCarrito();
   renderCarrito();
@@ -32,8 +40,6 @@ function renderCarrito() {
   const totalHTML = document.getElementById("totalCarrito");
 
   if (!contenedor || !totalHTML) return;
-
-  contenedor.innerHTML = "";
 
   let total = 0;
 
@@ -227,13 +233,10 @@ function renderHistorial() {
   }
 
   contenedor.innerHTML = "";
-  historial.forEach(compra => {
-    let productosHTML = "";
-    compra.productos.forEach(prod => {
-      productosHTML += `
-        <li>${prod.titulo} x${prod.cantidad} - $${prod.precio * prod.cantidad}</li>
-      `;
-    });
+   historial.forEach(compra => {
+    let productosHTML = compra.productos.map(prod => 
+      `<li>${prod.titulo} x${prod.cantidad} - $${prod.precio * prod.cantidad}</li>`
+    ).join('');
 
     contenedor.innerHTML += `
       <div class="card mb-4 p-3 shadow-sm">
@@ -288,7 +291,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const libro = libros.find(l => l.titulo === titulo);
       if (!libro) return;
-      if (cantidad > libro.stock) return;
+      if (cantidad > libro.stock){
+        window.location.href = "../error404.html";
+        return;
+      } 
 
       libro.stock -= cantidad;
       guardarLibros();
